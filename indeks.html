@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>peramban sederhana</title>
+    <link rel="stylesheet" href="stley.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body class="min-h-screen flex flex-col">
+    <div class="overlay w-full min-h-screen flex flex-col items-center p-4">
+        <form id="searchForm" action="https://www.google.com/search" method="get" target="_blank" class="search-container w-full max-w-2xl rounded-full overflow-hidden mt-8 mb-12 flex items-center">
+            <input type="text" name="q" placeholder="Explore Indonesian Culture" class="search-input flex-grow text-lg px-6 py-3 outline-none">
+            <button type="submit" class="bg-blue-500 text-white px-8 py-3 hover:bg-blue-600 transition duration-300">Search</button>
+        </form>
+
+        <div class="text-center text-white mb-12">
+            <h1 class="text-4xl font-bold mb-4">Discover Indonesian Heritage</h1>
+            <p class="text-lg">Immerse yourself in the rich tapestry of Indonesian culture, from traditional dance to vibrant textiles.</p>
+        </div>
+
+        <div class="grid grid-cols-4 sm:grid-cols-7 gap-8">
+            <a href="https://www.youtube.com" target="_blank" class="app-icon flex flex-col items-center">
+                <img src="youtube_1384060.png" alt="YouTube" class="w-16 h-16 rounded-full mb-2">
+                <span class="text-white text-sm">YouTube</span>
+            </a>
+            <a href="https://www.tiktok.com" target="_blank" class="app-icon flex flex-col items-center">
+                <img src="tiktok_3116490.png" alt="TikTok" class="w-16 h-16 rounded-full mb-2">
+                <span class="text-white text-sm">TikTok</span>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="app-icon flex flex-col items-center">
+                <img src="instagram_2111463.png" alt="Instagram" class="w-16 h-16 rounded-full mb-2">
+                <span class="text-white text-sm">Instagram</span>
+            </a>
+            <a href="https://web.whatsapp.com/" target="_blank" class="app-icon flex flex-col items-center">
+                <img src="whatsapp_3536445.png" alt="WhatsApp" class="w-16 h-16 rounded-full mb-2">
+                <span class="text-white text-sm">WhatsApp</span>
+            </a>
+            <a href="https://drive.google.com/" target="_blank" class="app-icon flex flex-col items-center">
+                <img src="drive.jpeg" alt="Google Drive" class="w-16 h-16 rounded-full mb-2">
+                <span class="text-white text-sm">Drive</span>
+            </a>
+            <a href="https://www.canva.com" target="_blank" class="app-icon flex flex-col items-center">
+                <img src="canva 2.png" alt="Canva" class="w-16 h-16 rounded-full mb-2">
+                <span class="text-white text-sm">Canva</span>
+            </a>
+            <a href="https://www.capcut.com" target="_blank" class="app-icon flex flex-col items-center">
+                <img src="capcut.jpg" alt="Capcut" class="w-16 h-16 rounded-full mb-2">
+                <span class="text-white text-sm">Capcut</span>
+            </a>
+        </div>
+    </div>
+    <script>
+        gsap.from('.search-container', {duration: 1, y: -50, opacity: 0, ease: 'power3.out'});
+        gsap.from('h1', {duration: 1, y: 50, opacity: 0, ease: 'power3.out', delay: 0.5});
+        gsap.from('p', {duration: 1, y: 50, opacity: 0, ease: 'power3.out', delay: 0.7});
+        gsap.from('.app-icon', {duration: 0.8, scale: 0, opacity: 0, stagger: 0.1, ease: 'back.out(1.7)', delay: 1});
+
+        document.getElementById('searchForm').addEventListener('submit', function(e) {
+            const input = this.querySelector('input');
+            if (input.value.trim() === '') {
+                e.preventDefault();
+                gsap.to(input, {duration: 0.1, x: 10, yoyo: true, repeat: 3});
+            }
+        });
+    </script>
+</body>
+</html>

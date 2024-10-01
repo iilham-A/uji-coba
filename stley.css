@@ -1,0 +1,27 @@
+
+ body {
+    background: url('https://picsum.photos/3000/2000?random=1') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+}
+ .overlay {
+    background: rgba(0, 0, 0, 0.6);
+}
+.search-container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+ .search-input {
+    background: transparent;
+    color: white;
+ }
+.search-input::placeholder {
+     color: rgba(255, 255, 255, 0.7);
+}
+.app-icon {
+    transition: transform 0.3s ease;
+}
+.app-icon:hover {
+    transform: scale(1.1);
+}
+    
